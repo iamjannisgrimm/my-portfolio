@@ -4,7 +4,6 @@ import GitHubCalendar from "react-github-calendar";
 const GitHubContributions = ({ username }) => {
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>GitHub Contributions</h2>
       <GitHubCalendar
         username={username}
         blockSize={12} // Adjusts square size
