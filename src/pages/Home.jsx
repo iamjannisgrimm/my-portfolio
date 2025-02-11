@@ -6,13 +6,21 @@ import ProfileHeader from "../components/ProfileHeader";
 
 export function Home() {
   return (
-    <div>
-      <ProfileHeader
-        image="/me/me.png" // Replace with actual image path
-        title="Engineer. Innovator. Leader."
-      />
-      <GitHubContributions username="iamjannisgrimm" /> {/* Replace with your GitHub username */}
-      <Timeline items={timelineData} />
+    <div style={{ position: "relative", width: "100%" }}>
+      {/* Profile Header with Fixed Height */}
+      <div style={{ width: "100%", height: "700px", position: "relative" }}>
+        <ProfileHeader image="/me/me.png" title="Engineer. Innovator. Leader." />
+      </div>
+
+      {/* Locked Contribution Section Below */}
+      <div style={{ width: "100%", position: "relative", marginTop: "-150px" }}>
+        <GitHubContributions username="iamjannisgrimm" />
+      </div>
+
+      {/* Timeline Always Below Contributions */}
+      <div style={{ marginTop: "50px", width: "100%" }}>
+        <Timeline items={timelineData} />
+      </div>
     </div>
   );
 }

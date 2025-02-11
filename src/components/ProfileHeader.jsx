@@ -2,42 +2,46 @@ import React from "react";
 
 const ProfileHeader = ({ image, title }) => {
   return (
-    <div style={{ position: "relative", textAlign: "center", marginBottom: "32px" }}>
-      {/* Background Image */}
-      <img
-        src={image}
-        alt="Profile"
-        style={{
-          width: "100%",
-          maxWidth: "400px",
-          height: "auto",
-          borderRadius: "12px",
-          display: "block",
-          margin: "0 auto",
-          objectFit: "cover"
-        }}
-      />
-
-      {/* Overlay Text */}
+    <div 
+      style={{ 
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "700px",  // ✅ FIXED HEIGHT (removes dynamic stretching)
+        width: "100vw",
+        position: "relative",
+        paddingBottom: "50px", 
+        boxSizing: "border-box",
+      }}
+    >
       <h1
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          marginBottom: "20px",
           color: "white",
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
-          padding: "12px 24px",
-          borderRadius: "8px",
           fontSize: "24px",
           fontWeight: "bold",
-          textAlign: "center"
+          textAlign: "center",
+          whiteSpace: "nowrap",
         }}
       >
         {title}
       </h1>
+
+      <img
+        src={image}
+        alt="Profile"
+        style={{
+          maxWidth: "400px",
+          width: "100%",
+          height: "auto",
+          borderRadius: "12px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
     </div>
   );
 };
 
-export default ProfileHeader; // ✅ Fix: Now exporting as default
+export default ProfileHeader;
