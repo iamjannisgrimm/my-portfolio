@@ -12,33 +12,24 @@ const timelineData = [
     ]
   },
   {
-    date: "2021 - 2023",
-    title: "Full Stack Developer",
-    subtitle: "Scaling applications at StartUp Labs",
-    location: "StartUp Labs, New York",
-    description: "Developed and maintained full-stack web applications using React and Node.js, serving over 100k monthly active users.",
-    icon: "/icons/fullstack-icon.png",
-    image: "/images/fullstack-project.png",
+    date: "2024 - Present",
+    title: "Synechron Inc",
+    subtitle: "Jr. iOS Developer | Jr. Project Manager",
+    description: "Incredible hands on AI Engineering consulting experience.",
+    icon: "/synechron/synechron.png",
+    background: "#2A2A2A",
     techStack: [
-      "/tech/react.png",
-      "/tech/nodejs.png",
-      "/tech/mongodb.png",
-      "/tech/aws.png"
     ]
   },
   {
-    date: "2019 - 2021",
-    title: "Junior Web Developer",
-    subtitle: "Building responsive web experiences at Digital Agency XYZ",
-    location: "Digital Agency XYZ, Boston",
-    description: "Collaborated with design and backend teams to build responsive web applications for various clients.",
-    icon: "/icons/webdev-icon.png",
-    image: "/images/webdev-project.png",
+    date: "2024",
+    title: "AI Cover Letter Generator",
+    subtitle: "Side Project",
+    icon: "/coverletter/terminal.png",
+    description: "Ability to generate cover letter in seconds, maximizing application efficiency.",
+    image: "/coverletter/coverlettergen.png",
+    background: "#2A2A2A",
     techStack: [
-      "/tech/javascript.png",
-      "/tech/html.png",
-      "/tech/css.png",
-      "/tech/php.png"
     ]
   }
 ];

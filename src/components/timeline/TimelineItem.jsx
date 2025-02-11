@@ -17,7 +17,7 @@ const TimelineItem = ({ date, title, subtitle, description, icon, image, techSta
         alignItems: "flex-start",
       }}
     >
-      {/* Left Column: Date & Icon (Stacked) */}
+      {/* Left Column: Icon (Stacked with Date Above) */}
       <div
         style={{
           width: "100px",
@@ -26,11 +26,34 @@ const TimelineItem = ({ date, title, subtitle, description, icon, image, techSta
           alignItems: "center",
           textAlign: "center",
           marginLeft: "50px",
-          flexShrink: 0, // ✅ Prevents early shrinking
+          flexShrink: 0,
+          position: "relative", // ✅ Enables absolute positioning for the date
         }}
       >
-        <p style={{ fontSize: "18px", color: "gray", marginBottom: "8px" }}>{date}</p>
-        {icon && <img src={icon} alt="icon" style={{ width: "60px", height: "60px", objectFit: "contain" }} />}
+        {/* Date - Now Positioned Over the Icon */}
+        <p
+        style={{
+          fontSize: "18px",
+          color: "gray",
+          position: "absolute",
+          top: "-50px", // ✅ Moves it above the icon
+          left: "0", // ✅ Pushes it all the way to the left
+          textAlign: "left", // ✅ Ensures the text stays left-aligned
+          whiteSpace: "nowrap", // ✅ Prevents text wrapping
+          marginLeft: "20px"
+        }}
+      >
+        {date}
+      </p>
+
+        {/* Icon Below the Date */}
+        {icon && (
+          <img
+            src={icon}
+            alt="icon"
+            style={{ width: "60px", height: "60px", objectFit: "contain", marginTop: "10px" }}
+          />
+        )}
       </div>
 
       {/* Right Column: Main Content */}
@@ -40,8 +63,10 @@ const TimelineItem = ({ date, title, subtitle, description, icon, image, techSta
         flexDirection: "column", 
         alignItems: "flex-start",
         minWidth: "calc(100% - 150px)", 
-        padding: "0px", // ✅ Ensures 30px padding around text
-        marginLeft: "-25px",
+        padding: "30px", // ✅ Ensures 30px padding around text
+        marginLeft: "-50px",
+        marginTop: "-75px"
+
       }}>
         <h3 style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "-25px", marginTop: "48px" }}>{title}</h3>
         <p style={{ fontSize: "20px", color: "gray", marginBottom: "24px" }}>{subtitle}</p>
@@ -55,7 +80,6 @@ const TimelineItem = ({ date, title, subtitle, description, icon, image, techSta
               justifyContent: "flex-start",
               alignItems: "center",
               paddingRight: "30px", // ✅ Ensures padding remains
-              marginLeft: "-72px"
             }}
           >
             <img
@@ -69,6 +93,7 @@ const TimelineItem = ({ date, title, subtitle, description, icon, image, techSta
                 objectFit: "contain",
                 borderRadius: "0px",
                 transition: "width 0.3s ease-in-out",
+                marginLeft: "-80px"
               }}
             />
           </div>
@@ -82,7 +107,8 @@ const TimelineItem = ({ date, title, subtitle, description, icon, image, techSta
             maxWidth: "clamp(300px, 95%, 100% - 50px)", // ✅ Allows later scaling
             padding: "10px 0",
             minWidth: "320px", // ✅ Ensures text stays readable longer
-            marginLeft: "-72px"
+            marginLeft: "-80px"
+
           }}
         >
           {description}
