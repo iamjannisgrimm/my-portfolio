@@ -23,10 +23,20 @@ const GitHubContributions = ({ username }) => {
         flexDirection: "column",
         textAlign: "center",
         width: "100%",
-        padding: "70px 8vw", // ✅ Increased padding for a larger default size
+        padding: "70px 8vw",
         boxSizing: "border-box",
       }}
     >
+      {/* Injecting CSS directly into the component */}
+      <style>
+        {`
+          .react-activity-calendar text {
+            fill: black !important; /* ✅ Forces month labels to be dark */
+            font-weight: bold; /* Optional: Makes labels more visible */
+          }
+        `}
+      </style>
+
       <div 
         style={{ 
           width: `min(${containerWidth}px, 100%)`,
@@ -41,7 +51,7 @@ const GitHubContributions = ({ username }) => {
           blockSize={Math.max(containerWidth / 90, 7)}
           blockMargin={Math.max(containerWidth / 250, 2)}
           fontSize={Math.max(containerWidth / 140, 8)}
-          colorScheme="dark"
+          colorScheme="light"
         />
       </div>
     </div>

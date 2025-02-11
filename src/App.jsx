@@ -3,7 +3,7 @@ import { Home } from './pages/Home';
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: "white", width: "100vw", height: "100vh", minHeight: "100vh", boxSizing: "border-box" }}>
       <Home />
     </div>
   );

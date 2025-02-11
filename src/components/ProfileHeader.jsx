@@ -18,8 +18,8 @@ const ProfileHeader = ({ image, title }) => {
       <h1
         style={{
           marginBottom: "20px",
-          color: "white",
-          fontSize: "24px",
+          color: "black",
+          fontSize: "28px",
           fontWeight: "bold",
           textAlign: "center",
           whiteSpace: "nowrap",

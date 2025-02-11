@@ -7,6 +7,7 @@ const timelineData = [
     description: "Your digital fully private life coach that truly understands you.",
     icon: "/seeme25/Icon.png",
     image: "seeme25/seemelineup.png",
+    background: "#2A2A2A",
     techStack: [
     ]
   },
