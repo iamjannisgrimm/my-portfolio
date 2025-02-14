@@ -10,11 +10,11 @@ const timelineData = [
     background: "#2A2A2A",
     techStack: [
     ],
-    link: "",
+    link: "https://seemeapp.ai",
+    linkColor: "#19CCFF",
     //-------------------------------------------
     topSpacing: 80,
     bottomSpacing: 0,
-    spacingBottom: ""
   },
   {
     date: "2024 - Present",
@@ -25,7 +25,9 @@ const timelineData = [
     background: "#2A2A2A",
     techStack: [
     ],
-    link: "",
+    link: "https://www.synechron.com",
+    linkColor: "#F6E228",
+
     //-------------------------------------------
     topSpacing: 0,
     bottomSpacing: 0,
@@ -40,7 +42,8 @@ const timelineData = [
     background: "#2A2A2A",
     techStack: [
     ],
-    link: "",
+    link: "https://github.com/iamjannisgrimm/CoverLetter",
+    linkColor: "#465EC3",
     //-------------------------------------------
     topSpacing: 0,
     bottomSpacing: 40,
@@ -54,7 +57,9 @@ const timelineData = [
     background: "#FFFFFF",
     techStack: [
     ],
-    link: "",
+    link: "https://www.lufthansa-industry-solutions.com/de-en/",
+    linkColor: "#000000",
+
     //-------------------------------------------
     topSpacing: 120,
     bottomSpacing: 0,
@@ -69,7 +74,9 @@ const timelineData = [
     background: "#FFFFFF",
     techStack: [
     ],
-    link: "",
+    link: "https://seemeapp.ai",
+    linkColor: "#03CDA2",
+
     //-------------------------------------------
     topSpacing: 0,
     bottomSpacing: 0,
@@ -83,7 +90,8 @@ const timelineData = [
     background: "#FFFFFF",
     techStack: [
     ],
-    link: "",
+    link: "https://www.aviatar.com/en/technical-logbook",
+    linkColor: "#000000",
     //-------------------------------------------
     topSpacing: 0,
     bottomSpacing: 40,
@@ -98,7 +106,8 @@ const timelineData = [
     background: "#2A2A2A",
     techStack: [
     ],
-    link: "",
+    link: "https://seemeapp.ai",
+    linkColor: "#1AD866",
     //-------------------------------------------
     topSpacing: 120,
     bottomSpacing: 0,
@@ -113,10 +122,12 @@ const timelineData = [
     background: "#2A2A2A",
     techStack: [
     ],
-    link: "",
+    link: "https://www.thirdanalytics.com/introhm",
+    linkColor: "#EE4831",
+
     //-------------------------------------------
-    spacingTop: "",
-    spacingBottom: ""
+    topSpacing: 0,
+    bottomSpacing: 0,
   },
   {
     date: "2020 - 2023",
@@ -127,7 +138,8 @@ const timelineData = [
     background: "#2A2A2A",
     techStack: [
     ],
-    link: "",
+    link: "https://www.asu.edu",
+    linkColor: "#901340",
     //-------------------------------------------
     topSpacing: 0,
     bottomSpacing: 40,
