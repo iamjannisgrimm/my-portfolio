@@ -16,6 +16,9 @@ const Timeline = () => {
           image={item.image}
           techStack={item.techStack}
           background={item.background}
+          topSpacing={item.topSpacing}     // Added this
+          bottomSpacing={item.bottomSpacing} // Added this
+    
         />
       ))}
     </div>

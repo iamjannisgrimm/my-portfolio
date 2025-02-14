@@ -11,7 +11,9 @@ const timelineData = [
     techStack: [
     ],
     link: "",
-    spacingTop: "",
+    //-------------------------------------------
+    topSpacing: 80,
+    bottomSpacing: 0,
     spacingBottom: ""
   },
   {
@@ -22,7 +24,11 @@ const timelineData = [
     icon: "/synechron/synechron.png",
     background: "#2A2A2A",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 0,
+    bottomSpacing: 0,
   },
   {
     date: "2024",
@@ -33,7 +39,11 @@ const timelineData = [
     image: "/coverletter/coverlettergen.png",
     background: "#2A2A2A",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 0,
+    bottomSpacing: 40,
   },
   {
     date: "2023",
@@ -43,7 +53,11 @@ const timelineData = [
     description: "Microservice inception directly leading to win of two new clients.",
     background: "#FFFFFF",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 120,
+    bottomSpacing: 0,
   },
   {
     date: "2023",
@@ -54,7 +68,11 @@ const timelineData = [
     image: "/seeme2023/seeme2023lineup.png",
     background: "#FFFFFF",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 0,
+    bottomSpacing: 0,
   },
   {
     date: "2022",
@@ -64,7 +82,11 @@ const timelineData = [
     description: "Digital Flight LogBook, integral role in communicating functionality in app.",
     background: "#FFFFFF",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 0,
+    bottomSpacing: 40,
   },
   {
     date: "2022",
@@ -75,7 +97,11 @@ const timelineData = [
     description: "Journaling reinvented. First iteration of a product I needed.",
     background: "#2A2A2A",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 120,
+    bottomSpacing: 0,
   },
   {
     date: "2020 - 2021",
@@ -86,7 +112,11 @@ const timelineData = [
     description: "Directly helped this startup get next round of funding through delivery of Beta.",
     background: "#2A2A2A",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    spacingTop: "",
+    spacingBottom: ""
   },
   {
     date: "2020 - 2023",
@@ -96,7 +126,11 @@ const timelineData = [
     description: "Focusing on Software Engineering and Innovation.",
     background: "#2A2A2A",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 0,
+    bottomSpacing: 40,
   },
   {
     date: "2018",
@@ -107,7 +141,11 @@ const timelineData = [
     description: "My life at a glance. Keeping track of all the important milestones.",
     background: "#FFFFFF",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 120,
+    bottomSpacing: 0,
   },
   {
     date: "2017",
@@ -118,7 +156,11 @@ const timelineData = [
     description: "Digitilizing my paper LogBook.",
     background: "#FFFFFF",
     techStack: [
-    ]
+    ],
+    link: "",
+    //-------------------------------------------
+    topSpacing: 0,
+    bottomSpacing: 40,
   }
 ];
 
