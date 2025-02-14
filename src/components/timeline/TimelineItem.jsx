@@ -10,7 +10,9 @@ const TimelineItem = ({
   techStack, 
   background, 
   topSpacing,
-  bottomSpacing
+  bottomSpacing,
+  link,
+  linkColor
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
@@ -158,18 +160,41 @@ const TimelineItem = ({
             </div>
           )}
           
-          <p
+          <div
             style={{
               color: "gray",
               textAlign: "left",
               maxWidth: "clamp(300px, 95%, 100% - 50px)",
               padding: "10px 0",
               minWidth: "320px",
-              marginLeft: "-80px"
+              marginLeft: "-80px",
+              marginTop: !image ? "-10px" : "15px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px"
             }}
           >
-            {description}
-          </p>
+            <p style={{ margin: 0 }}>{description}</p>
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: linkColor,
+                  textDecoration: "none",
+                  paddingBottom: "2px",
+                  width: "fit-content",
+                  transition: "opacity 0.2s ease",
+                  opacity: 0.8
+                }}
+                onMouseOver={(e) => e.target.style.opacity = "1"}
+                onMouseOut={(e) => e.target.style.opacity = "0.8"}
+              >
+                Learn more
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
