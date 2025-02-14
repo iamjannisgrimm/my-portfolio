@@ -20,6 +20,7 @@ const Timeline = () => {
          bottomSpacing={item.bottomSpacing}
          link={item.link}  // Added this
          linkColor={item.linkColor}
+         techStack={item.techStack}
        />
      ))}
    </div>

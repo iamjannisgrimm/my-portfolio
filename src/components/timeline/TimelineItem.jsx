@@ -175,6 +175,33 @@ const TimelineItem = ({
             }}
           >
             <p style={{ margin: 0 }}>{description}</p>
+            
+            {techStack && techStack.length > 0 && (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: "15px",
+                  marginTop: "5px",
+                  marginBottom: "5px"
+                }}
+              >
+                {techStack.map((tech, index) => (
+                  <img
+                    key={index}
+                    src={tech}
+                    alt={`tech-${index}`}
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      objectFit: "contain"
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+            
             {link && (
               <a
                 href={link}

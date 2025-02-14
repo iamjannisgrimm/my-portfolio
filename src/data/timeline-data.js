@@ -9,6 +9,10 @@ const timelineData = [
     image: "seeme25/seemelineup.png",
     background: "#2A2A2A",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/swiftdata.png",
+      "/techstack/ollama.png",
+      "/techstack/mistral.png"
     ],
     link: "https://seemeapp.ai",
     linkColor: "#19CCFF",
@@ -24,6 +28,11 @@ const timelineData = [
     icon: "/synechron/synechron.png",
     background: "#2A2A2A",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/react.png",
+      "/techstack/openai.png",
+      "/techstack/jira.png",
+
     ],
     link: "https://www.synechron.com",
     linkColor: "#F6E228",
@@ -41,6 +50,9 @@ const timelineData = [
     image: "/coverletter/coverlettergen.png",
     background: "#2A2A2A",
     techStack: [
+      "/techstack/python.png",
+      "/techstack/openai.png",
+
     ],
     link: "https://github.com/iamjannisgrimm/CoverLetter",
     linkColor: "#465EC3",
@@ -56,6 +68,12 @@ const timelineData = [
     description: "Microservice inception directly leading to win of two new clients.",
     background: "#FFFFFF",
     techStack: [
+      "/techstack/angular.png",
+      "/techstack/go.png",
+      "/techstack/kubernetes.png",
+      "/techstack/springboot.png",
+      "/techstack/docker.png",
+
     ],
     link: "https://www.lufthansa-industry-solutions.com/de-en/",
     linkColor: "#000000",
@@ -73,6 +91,11 @@ const timelineData = [
     image: "/seeme2023/seeme2023lineup.png",
     background: "#FFFFFF",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/firebase.png",
+      "/techstack/nodejs.png",
+      "/techstack/openai.png",
+
     ],
     link: "https://seemeapp.ai",
     linkColor: "#03CDA2",
@@ -89,6 +112,9 @@ const timelineData = [
     description: "Digital Flight LogBook, integral role in communicating functionality in app.",
     background: "#FFFFFF",
     techStack: [
+      "/techstack/angular.png",
+      "/techstack/materialui.png",
+      "/techstack/jira.png",
     ],
     link: "https://www.aviatar.com/en/technical-logbook",
     linkColor: "#000000",
@@ -105,6 +131,8 @@ const timelineData = [
     description: "Journaling reinvented. First iteration of a product I needed.",
     background: "#2A2A2A",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/coredata.png",
     ],
     link: "https://seemeapp.ai",
     linkColor: "#1AD866",
@@ -121,6 +149,11 @@ const timelineData = [
     description: "Directly helped this startup get next round of funding through delivery of Beta.",
     background: "#2A2A2A",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/firebase.png",
+      "/techstack/coredata.png",
+      "/techstack/xsens.png",
+
     ],
     link: "https://www.thirdanalytics.com/introhm",
     linkColor: "#EE4831",
@@ -153,6 +186,9 @@ const timelineData = [
     description: "My life at a glance. Keeping track of all the important milestones.",
     background: "#FFFFFF",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/coredata.png",
+      "/techstack/cloudkit.png",
     ],
     link: "",
     //-------------------------------------------
@@ -168,6 +204,9 @@ const timelineData = [
     description: "Digitilizing my paper LogBook.",
     background: "#FFFFFF",
     techStack: [
+      "/techstack/swiftui.png",
+      "/techstack/coredata.png",
+
     ],
     link: "",
     //-------------------------------------------
