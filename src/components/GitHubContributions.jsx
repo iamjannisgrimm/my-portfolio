@@ -8,37 +8,49 @@ const GitHubContributions = ({ username }) => {
     const handleResize = () => {
       setContainerWidth(Math.min(window.innerWidth * 0.9, 800));
     };
-
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <div 
-      style={{ 
-        display: "flex", 
+    <div
+      style={{
+        display: "flex",
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
         flexDirection: "column",
         textAlign: "center",
-        width: "100%",
-        padding: "70px 8vw",
+        width: "100vw",
+        marginTop: "70px",
         boxSizing: "border-box",
+        backgroundColor: "white",
+        padding: "30px 0",
       }}
     >
       {/* Injecting CSS directly into the component */}
       <style>
         {`
           .react-activity-calendar text {
-            fill: black !important; /* ✅ Forces month labels to be dark */
-            font-weight: bold; /* Optional: Makes labels more visible */
+            fill: black !important;
+            font-weight: bold;
+          }
+          .react-activity-calendar {
+            color: black !important;
+          }
+          .react-activity-calendar span {
+            color: black !important;
+          }
+          .react-activity-calendar summary {
+            color: black !important;
+          }
+          .react-activity-calendar button {
+            color: black !important;
           }
         `}
       </style>
-
-      <div 
-        style={{ 
+      <div
+        style={{
           width: `min(${containerWidth}px, 100%)`,
           maxWidth: "100%",
           transition: "width 0.3s ease-in-out",
