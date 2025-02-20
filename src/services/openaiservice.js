@@ -1,7 +1,8 @@
-import dotenv from "dotenv";
-dotenv.config(); // Load .env file
 
-const API_KEY = process.env.OPENAI_API_KEY; // Load key from environment variable
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY; // Correct way for Vite
+console.log("OpenAI API Key:", import.meta.env.VITE_OPENAI_API_KEY); // For Vite
+
+
 const API_URL = "https://api.openai.com/v1/chat/completions";
 
 export async function getChatbotResponse(userMessage) {
