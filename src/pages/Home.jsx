@@ -9,48 +9,46 @@ import Footer from "../components/Footer";
 export function Home() {
   return (
     <div style={{ position: "relative", width: "100%" }}>
-      {/* Profile Header with Fixed Height */}
-      <div style={{ width: "100%", height: "700px", position: "relative" }}>
-        <ProfileHeader image="/me/me.png" title="Engineer. Innovator. Leader." />
-      </div>
-
-      {/* Container for chat and contributions */}
-      <div style={{ position: "relative" }}>
-        {/* Chatbot Section */}
-        <div style={{ 
-          width: "100%",
-          position: "relative",
-          zIndex: 2
-        }}>
-          <div style={{ 
-            width: "100%", 
-            maxWidth: "1200px", 
-            margin: "0 auto",
-            padding: "0 20px",
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "20px"
-          }}>
-            <Chatbot />
-          </div>
+      {/* All blurrable content */}
+      <div className="blurrable-content" style={{ position: "relative" }}>
+        {/* Profile Header */}
+        <div style={{ width: "100%", height: "700px", position: "relative" }}>
+          <ProfileHeader image="/me/me.png" title="Engineer. Innovator. Leader." />
         </div>
 
         {/* Contributions Section */}
-        <div style={{ 
-          width: "100%",
-          position: "relative",
-          zIndex: 1
-        }}>
+        <div style={{ width: "100%", position: "relative" }}>
           <GitHubContributions username="iamjannisgrimm" />
         </div>
+
+        {/* Timeline */}
+        <div style={{ marginTop: "20px", width: "100%" }}>
+          <Timeline items={timelineData} />
+        </div>
+
+        <Footer />
       </div>
 
-      {/* Timeline */}
-      <div style={{ marginTop: "50px", width: "100%" }}>
-        <Timeline items={timelineData} />
+      {/* Chatbot positioned absolutely over other content */}
+      <div style={{
+        position: "absolute",
+        top: "640px", // Adjust this value to position the chatbot where you want it
+        left: "0",
+        right: "0",
+        zIndex: 1000,
+        pointerEvents: "all"
+      }}>
+        <div style={{
+          width: "100%",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "0 20px",
+          display: "flex",
+          justifyContent: "center"
+        }}>
+          <Chatbot />
+        </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
