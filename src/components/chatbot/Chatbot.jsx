@@ -11,7 +11,6 @@ function Chatbot() {
   const originalStyles = useRef(null);
 
   useEffect(() => {
-    // Store the original position and styles when component mounts
     if (chatRef.current) {
       const element = chatRef.current;
       const styles = window.getComputedStyle(element);
@@ -26,7 +25,7 @@ function Chatbot() {
     }
 
     const handleScroll = () => {
-      if (window.scrollY > 50) {  // Add a small threshold
+      if (window.scrollY > 50) {
         setIsAnchored(false);
       }
     };
@@ -56,12 +55,24 @@ function Chatbot() {
   const handleInputClick = () => {
     if (!isAnchored) {
       setIsAnchored(true);
-      // Scroll to bottom when anchoring
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      // Remove the automatic scroll behavior
     }
+  };
+
+  const fixedStyles = isAnchored ? {
+    position: "fixed",
+    bottom: "0",
+    left: "50%",
+    transform: "translateX(-50%)",
+    zIndex: 1000,
+    margin: 0,
+    padding: "0 20px",
+    boxSizing: "border-box",
+    width: "100%",
+    maxWidth: "800px"
+  } : {
+    position: "relative",
+    transform: "none"
   };
 
   return (
@@ -73,16 +84,7 @@ function Chatbot() {
         display: "flex",
         flexDirection: "column",
         gap: "10px",
-        ...(isAnchored ? {
-          position: "fixed",
-          bottom: "0",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 1000,
-        } : {
-          position: "relative",
-          transform: "none"
-        }),
+        ...fixedStyles,
         transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         willChange: "transform, position"
       }}
@@ -97,7 +99,9 @@ function Chatbot() {
           boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
           opacity: 1,
           transform: isAnchored ? "translateY(0)" : "translateY(20px)",
-          transition: "all 0.3s ease-out"
+          transition: "all 0.3s ease-out",
+          maxHeight: isAnchored ? "calc(100vh - 100px)" : "none",
+          overflowY: "auto"
         }}>
           <ChatMessages messages={messages} />
           {isLoading && (
@@ -124,7 +128,8 @@ function Chatbot() {
             ? "0 -4px 6px -1px rgba(0, 0, 0, 0.1)" 
             : "0 2px 4px rgba(0, 0, 0, 0.1)",
           cursor: isAnchored ? "default" : "pointer",
-          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          marginBottom: isAnchored ? "0" : undefined
         }}>
         <ChatInput onSendMessage={handleSendMessage} />
       </div>
