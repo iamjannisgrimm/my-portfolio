@@ -4,10 +4,12 @@ function ChatMessages({ messages, isLoading }) {
   return (
     <div
       style={{
-        maxHeight: "300px",
+        height: "calc(100vh - 200px)", // Use remaining viewport height
         overflowY: "auto",
-        marginBottom: "20px",
         padding: "20px 0",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end", // Align messages to the bottom
       }}
     >
       {/* Define keyframe animations */}
@@ -39,7 +41,8 @@ function ChatMessages({ messages, isLoading }) {
           key={index}
           className="message-animate"
           style={{
-            textAlign: msg.sender === "user" ? "right" : "left",
+            display: "flex",
+            justifyContent: msg.sender === "user" ? "flex-end" : "flex-start",
             marginBottom: "12px",
           }}
         >
@@ -47,10 +50,9 @@ function ChatMessages({ messages, isLoading }) {
             style={{
               display: "inline-block",
               padding: "10px 16px",
-              textAlign: msg.sender === "user" ? "right" : "left",
               marginRight: msg.sender === "user" ? "40px" : "0",
               borderRadius: "12px",
-              background: msg.sender === "user" ? "#2563eb" : "#f3f4f6",
+              background: msg.sender === "user" ? "#85A7D5" : "#F5F5F5",
               color: msg.sender === "user" ? "#ffffff" : "#111827",
               maxWidth: "80%",
               wordWrap: "break-word",
@@ -65,7 +67,8 @@ function ChatMessages({ messages, isLoading }) {
         <div
           className="message-animate"
           style={{
-            textAlign: "left",
+            display: "flex",
+            justifyContent: "flex-start",
             marginBottom: "12px",
           }}
         >

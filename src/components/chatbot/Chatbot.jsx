@@ -69,6 +69,7 @@ function Chatbot() {
     };
   }, [isAnchored]);
 
+  // Sends a normal user message typed in the input bar.
   const handleSendMessage = async (message) => {
     setIsLoading(true);
     const userMessage = { text: message, sender: "user" };
@@ -87,16 +88,16 @@ function Chatbot() {
     setIsLoading(false);
   };
 
-  const handleInputClick = () => {
-    if (!isAnchored) setIsAnchored(true);
-  };
-
-  // When a conversation prompt is tapped, send it as a user message.
+  // When a conversation prompt is selected, send it as a regular user message.
   const handlePromptSelect = (prompt) => {
     handleSendMessage(prompt);
   };
 
-  // Preserve horizontal centering by only adjusting vertical translation when anchored.
+  const handleInputClick = () => {
+    if (!isAnchored) setIsAnchored(true);
+  };
+
+  // Only adjust vertical translation when anchored.
   const getTransform = () => {
     if (!isAnchored || !initialPosition) return "none";
     const currentTop = initialPosition.top;
@@ -105,7 +106,7 @@ function Chatbot() {
     return `translate(0px, ${moveY}px)`;
   };
 
-  // Use dynamic width: 90% of viewport width capped at 500px.
+  // Dynamic width: 90% of viewport width capped at 500px.
   const inputBarWidth = Math.min(screenWidth * 0.9, 500);
 
   return (
@@ -136,7 +137,7 @@ function Chatbot() {
           zIndex: isAnchored ? 1000 : 1,
         }}
       >
-        {/* Messages or Conversation Starters container; only render when anchored */}
+        {/* Render messages (or conversation starters) only when anchored */}
         {isAnchored && (
           <div
             style={{
@@ -144,8 +145,10 @@ function Chatbot() {
               bottom: "100%",
               left: "0",
               right: "0",
+              // Use flex to push messages to the bottom of the view
               display: "flex",
-              justifyContent: "center",
+              flexDirection: "column",
+              justifyContent: "flex-end",
               pointerEvents: "auto",
               marginBottom: "20px",
             }}

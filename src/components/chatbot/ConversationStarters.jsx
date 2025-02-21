@@ -4,30 +4,28 @@ import conversationPrompts from "../../data/prompts";
 const ConversationStarters = ({ onSelectPrompt }) => {
   return (
     <div
-      // Stop the click from reaching the overlay
       onClick={(e) => e.stopPropagation()}
       style={{
         display: "flex",
-        flexDirection: "column", // stack vertically
-        alignItems: "center",    // center horizontally
-        padding: "10px 0",
-        gap: "10px",             // space between buttons
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "10px 0 30px 0", // extra bottom padding for spacing
+        gap: "10px",
       }}
     >
       {conversationPrompts.map((prompt, index) => (
         <button
           key={index}
-          // Also stopPropagation here just in case
           onClick={(e) => {
             e.stopPropagation();
-            onSelectPrompt(prompt); // triggers the conversation
+            onSelectPrompt(prompt);
           }}
           style={{
             padding: "10px 20px",
             borderRadius: "20px",
             border: "none",
-            backgroundColor: "#f3f4f6",
-            color: "#111827",
+            backgroundColor: "#85A7D5",
+            color: "#ffffff",
             cursor: "pointer",
             boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
             maxWidth: "90%",
