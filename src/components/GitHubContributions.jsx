@@ -22,7 +22,7 @@ const GitHubContributions = ({ username }) => {
         flexDirection: "column",
         textAlign: "center",
         width: "100vw",
-        marginTop: "10px",
+        marginTop: "-31px",
         boxSizing: "border-box",
         backgroundColor: "white",
         padding: "30px 0",
