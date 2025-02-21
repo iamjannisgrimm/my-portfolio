@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import ChatMessages from "./ChatMessages.jsx";
 import ChatInput from "./ChatInput.jsx";
+import ConversationStarters from "./ConversationStarters.jsx";
 import { getChatbotResponse } from "../../services/openaiservice.js";
 
 function Chatbot() {
@@ -59,7 +60,7 @@ function Chatbot() {
       opacity: isAnchored ? "1" : "0",
       pointerEvents: isAnchored ? "auto" : "none",
       zIndex: "900",
-      cursor: "pointer"
+      cursor: "pointer",
     });
     overlay.addEventListener("click", handleOverlayClick);
     return () => {
@@ -80,7 +81,7 @@ function Chatbot() {
       console.error("Error getting chatbot response:", error);
       setMessages((prev) => [
         ...prev,
-        { text: "Error fetching response.", sender: "bot" }
+        { text: "Error fetching response.", sender: "bot" },
       ]);
     }
     setIsLoading(false);
@@ -88,6 +89,11 @@ function Chatbot() {
 
   const handleInputClick = () => {
     if (!isAnchored) setIsAnchored(true);
+  };
+
+  // When a conversation prompt is tapped, send it as a user message.
+  const handlePromptSelect = (prompt) => {
+    handleSendMessage(prompt);
   };
 
   // Preserve horizontal centering by only adjusting vertical translation when anchored.
@@ -99,8 +105,7 @@ function Chatbot() {
     return `translate(0px, ${moveY}px)`;
   };
 
-  // Use the same dynamic width calculation as in your contributions page:
-  // 90% of viewport width capped at 800px.
+  // Use dynamic width: 90% of viewport width capped at 500px.
   const inputBarWidth = Math.min(screenWidth * 0.9, 500);
 
   return (
@@ -112,7 +117,7 @@ function Chatbot() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative"
+        position: "relative",
       }}
     >
       <div
@@ -128,76 +133,51 @@ function Chatbot() {
           transform: getTransform(),
           transition: "all 1.5s cubic-bezier(0.4, 0, 0.2, 1)",
           willChange: "transform",
-          zIndex: isAnchored ? 1000 : 1
+          zIndex: isAnchored ? 1000 : 1,
         }}
       >
-        {/* Messages container */}
+        {/* Messages or Conversation Starters container; only render when anchored */}
+        {isAnchored && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "100%",
+              left: "0",
+              right: "0",
+              display: "flex",
+              justifyContent: "center",
+              pointerEvents: "auto",
+              marginBottom: "20px",
+            }}
+          >
+            {messages.length === 0 ? (
+              <ConversationStarters onSelectPrompt={handlePromptSelect} />
+            ) : (
+              <ChatMessages messages={messages} isLoading={isLoading} />
+            )}
+          </div>
+        )}
+
+        {/* Input bar wrapper – always centered with a slight x offset */}
         <div
+          onClick={handleInputClick}
           style={{
-            position: "absolute",
-            bottom: "100%",
-            left: "0",
-            right: "0",
-            display: "flex",
-            justifyContent: "center",
-            pointerEvents: messages.length > 0 ? "auto" : "none",
-            marginBottom: "20px"
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%) translateX(-10px)",
+            backgroundColor: "transparent",
+            cursor: isAnchored ? "default" : "pointer",
+            transition: "all 1.5s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
-          {(messages.length > 0 || isLoading) && (
-            <div
-              style={{
-                background: "transparent",
-                width: "100%",
-                maxHeight: "calc(70vh - 100px)",
-                overflowY: "auto",
-                opacity: isAnchored ? 1 : 0,
-                transform: isAnchored
-                  ? "translateY(0)"
-                  : "translateY(20px)",
-                transition: "all 1.5s cubic-bezier(0.4, 0, 0.2, 1)"
-              }}
-            >
-              <ChatMessages messages={messages} />
-              {isLoading && (
-                <p
-                  style={{
-                    color: "#4a5568",
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    textAlign: "center",
-                    background: "white",
-                    padding: "8px",
-                    borderRadius: "8px",
-                    display: "inline-block",
-                    margin: "0 auto"
-                  }}
-                >
-                  Thinking...
-                </p>
-              )}
-            </div>
-          )}
+          <div style={{ width: `${inputBarWidth}px`, margin: "0 auto" }}>
+            <ChatInput
+              onSendMessage={handleSendMessage}
+              isAnchored={isAnchored}
+            />
+          </div>
         </div>
-
-        {/* Input bar wrapper – always centered */}
-        <div
-        onClick={handleInputClick}
-        style={{
-          position: "fixed",
-          top: "50%",
-          left: "50%",
-          // The transform now centers the bar and adds a 10px x offset
-          transform: "translate(-50%, -50%) translateX(-10px)",
-          backgroundColor: "transparent",
-          cursor: isAnchored ? "default" : "pointer",
-          transition: "all 1.5s cubic-bezier(0.4, 0, 0.2, 1)"
-        }}
-      >
-        <div style={{ width: `${inputBarWidth}px`, margin: "0 auto" }}>
-          <ChatInput onSendMessage={handleSendMessage} isAnchored={isAnchored} />
-        </div>
-      </div>
       </div>
     </div>
   );

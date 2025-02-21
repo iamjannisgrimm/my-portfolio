@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function ChatInput({ onSendMessage, isAnchored }) {
   const [message, setMessage] = useState("");
