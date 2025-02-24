@@ -1,3 +1,4 @@
+import { userContext } from "../data/prompts"; // Ensure correct import path
 
 const API_KEY = import.meta.env.VITE_OPENAI_API_KEY; 
 const API_URL = "https://api.groq.com/openai/v1/chat/completions";
@@ -12,7 +13,10 @@ export async function getChatbotResponse(userMessage) {
       },
       body: JSON.stringify({
         model: "llama-3.3-70b-versatile",
-        messages: [{ role: "user", content: userMessage }],
+        messages: [
+          { role: "system", content: userContext }, // First system prompt with user context
+          { role: "user", content: userMessage } // User message
+        ],
       }),
     });
 

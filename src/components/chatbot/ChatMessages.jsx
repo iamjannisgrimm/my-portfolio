@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 
 function ChatMessages({ messages, isLoading }) {
   return (
@@ -36,6 +37,7 @@ function ChatMessages({ messages, isLoading }) {
           .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
         `}
       </style>
+
       {messages.map((msg, index) => (
         <div
           key={index}
@@ -59,10 +61,15 @@ function ChatMessages({ messages, isLoading }) {
               boxShadow: "0 1px 2px rgba(0, 0, 0, 0.05)",
             }}
           >
-            {msg.text}
+            {msg.sender === "bot" ? (
+              <ReactMarkdown>{msg.text}</ReactMarkdown> // Render markdown for bot responses
+            ) : (
+              msg.text
+            )}
           </span>
         </div>
       ))}
+
       {isLoading && (
         <div
           className="message-animate"
