@@ -1,9 +1,6 @@
 
-const API_KEY = import.meta.env.VITE_OPENAI_API_KEY; // Correct way for Vite
-console.log("OpenAI API Key:", import.meta.env.VITE_OPENAI_API_KEY); // For Vite
-
-
-const API_URL = "https://api.openai.com/v1/chat/completions";
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY; 
+const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 export async function getChatbotResponse(userMessage) {
   try {
@@ -14,7 +11,7 @@ export async function getChatbotResponse(userMessage) {
         Authorization: `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4",
+        model: "llama-3.3-70b-versatile",
         messages: [{ role: "user", content: userMessage }],
       }),
     });
