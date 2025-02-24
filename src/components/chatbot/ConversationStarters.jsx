@@ -9,8 +9,8 @@ const ConversationStarters = ({ onSelectPrompt }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "10px 0 30px 0", // extra bottom padding for spacing
-        gap: "10px",
+        padding: "30px 0 30px 0", // extra bottom padding for spacing
+        gap: "30px",
       }}
     >
       {conversationPrompts.map((prompt, index) => (

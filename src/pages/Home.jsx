@@ -5,6 +5,7 @@ import GitHubContributions from "../components/GitHubContributions";
 import ProfileHeader from "../components/ProfileHeader";
 import Chatbot from "../components/chatbot/Chatbot.jsx";
 import Footer from "../components/Footer";
+import FigmaEmbed from "../components/FigmaEmbed";
 
 export function Home() {
   return (
@@ -20,6 +21,12 @@ export function Home() {
         <div style={{ width: "100%", position: "relative" }}>
           <GitHubContributions username="iamjannisgrimm" />
         </div>
+
+        {/* Figma Board Fullscreen Embed
+  <div style={{ width: "100%", height: "100vh", marginTop: "20px" }}>
+    <FigmaEmbed />
+  </div> */}
+
 
         {/* Timeline */}
         <div style={{ marginTop: "20px", width: "100%" }}>
