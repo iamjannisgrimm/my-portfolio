@@ -23,6 +23,8 @@ const ProfileHeader = ({ image, title }) => {
           fontWeight: "bold",
           textAlign: "center",
           whiteSpace: "nowrap",
+          fontFamily: "SF Pro"
+
         }}
       >
         {title}

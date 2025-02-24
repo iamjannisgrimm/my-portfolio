@@ -130,7 +130,7 @@ const TimelineItem = ({
           marginLeft: "-50px",
           marginTop: "-75px"
         }}>
-          <h3 style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "-25px", marginTop: "48px" }}>{title}</h3>
+          <h3 style={{ fontSize: "28px", color: background === "#FFFFFF" ? "black" : "white", fontWeight: "bold", marginBottom: "-25px", marginTop: "48px", fontFamily: "SF Pro" }}>{title}</h3>
           <p style={{ fontSize: "20px", color: "gray", marginBottom: "24px" }}>{subtitle}</p>
           
           {image && (
