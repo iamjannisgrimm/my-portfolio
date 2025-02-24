@@ -3,6 +3,8 @@ import ChatMessages from "./ChatMessages.jsx";
 import ChatInput from "./ChatInput.jsx";
 import ConversationStarters from "./ConversationStarters.jsx";
 import { getChatbotResponse } from "../../services/openaiservice.js";
+import userContext from "../../data/prompts";
+
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
@@ -69,13 +71,20 @@ function Chatbot() {
     };
   }, [isAnchored]);
 
-  // Sends a normal user message typed in the input bar.
+  // When a conversation prompt is selected, send it as a regular user message.
+  const handlePromptSelect = (prompt) => {
+    handleSendMessage(prompt);
+  };
+
+  // Send a message that includes your user context
   const handleSendMessage = async (message) => {
     setIsLoading(true);
     const userMessage = { text: message, sender: "user" };
     setMessages((prev) => [...prev, userMessage]);
     try {
-      const botResponseText = await getChatbotResponse(message);
+      // Prepend the user context to the user's message
+      const fullMessage = `${userContext}\nUser: ${message}`;
+      const botResponseText = await getChatbotResponse(fullMessage);
       const botMessage = { text: botResponseText, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
@@ -86,11 +95,6 @@ function Chatbot() {
       ]);
     }
     setIsLoading(false);
-  };
-
-  // When a conversation prompt is selected, send it as a regular user message.
-  const handlePromptSelect = (prompt) => {
-    handleSendMessage(prompt);
   };
 
   const handleInputClick = () => {
