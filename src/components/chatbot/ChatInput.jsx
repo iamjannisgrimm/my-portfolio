@@ -15,9 +15,12 @@ function ChatInput({ onSendMessage, isAnchored }) {
       onSubmit={handleSubmit}
       style={{
         display: "flex",
-        width: "100%",
-        margin: "0 auto",
-        position: "relative"
+        width: isAnchored ? "120%" : "100%", // Expanded even more when anchored
+        maxWidth: isAnchored ? "950px" : "750px", // Increased max width when anchored
+        position: "relative",
+        left: isAnchored ? "50%" : "45", // Keeps it centered
+        transform: "translateX(-50%)", // Ensures it expands evenly to both sides
+        transition: "width 0.3s ease-in-out, max-width 0.3s ease-in-out"
       }}
     >
       <input
@@ -27,14 +30,15 @@ function ChatInput({ onSendMessage, isAnchored }) {
         placeholder="Ask me anything..."
         style={{
           width: "100%",
-          padding: isAnchored ? "16px 44px 16px 20px" : "8px 40px 8px 12px",
-          borderRadius: "6px",
+          padding: isAnchored ? "20px 50px 20px 25px" : "12px 50px 12px 20px",
+          borderRadius: isAnchored ? "14px" : "10px", // Increased corner radius when anchored
           border: isAnchored ? "none" : "1px solid #d1d5db",
           fontSize: isAnchored ? "17px" : "16px",
           backgroundColor: isAnchored ? "#ffffff" : "transparent",
           color: "#111827",
-          transition: "all 1.5s cubic-bezier(0.4, 0, 0.2, 1)",
-          outline: "none" // Removes the default focus border/outline
+          transition: "all 0.3s ease-in-out",
+          outline: "none", // Removes default focus border/outline
+          fontFamily: "SF Pro, sans-serif" // Applied SF Pro font
         }}
       />
       <button

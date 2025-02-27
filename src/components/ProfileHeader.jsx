@@ -19,8 +19,8 @@ const ProfileHeader = ({ image, title }) => {
         style={{
           marginBottom: "20px",
           color: "black",
-          fontSize: "28px",
-          fontWeight: "bold",
+          fontSize: "48px",
+          fontWeight: 800,
           textAlign: "center",
           whiteSpace: "nowrap",
           fontFamily: "SF Pro"
