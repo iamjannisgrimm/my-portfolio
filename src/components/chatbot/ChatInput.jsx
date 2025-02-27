@@ -18,7 +18,7 @@ function ChatInput({ onSendMessage, isAnchored }) {
         width: isAnchored ? "120%" : "100%", // Expanded even more when anchored
         maxWidth: isAnchored ? "950px" : "750px", // Increased max width when anchored
         position: "relative",
-        left: isAnchored ? "50%" : "45", // Keeps it centered
+        left: isAnchored ? "50%" : "45%", // Keeps it centered
         transform: "translateX(-50%)", // Ensures it expands evenly to both sides
         transition: "width 0.3s ease-in-out, max-width 0.3s ease-in-out"
       }}
