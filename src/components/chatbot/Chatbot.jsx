@@ -3,7 +3,7 @@ import ChatMessages from "./ChatMessages.jsx";
 import ChatInput from "./ChatInput.jsx";
 import ConversationStarters from "./ConversationStarters.jsx";
 import { getChatbotResponse } from "../../services/openaiservice.js";
-import userContext from "../../data/prompts";
+import { userContext } from "../../data/prompts";
 
 
 function Chatbot() {
