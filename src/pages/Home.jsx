@@ -39,7 +39,7 @@ export function Home() {
       {/* Chatbot positioned absolutely over other content */}
       <div style={{
         position: "absolute",
-        top: "640px", // Adjust this value to position the chatbot where you want it
+        top: "650px", // Adjust this value to position the chatbot where you want it
         left: "0",
         right: "0",
         zIndex: 1000,

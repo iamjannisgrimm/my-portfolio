@@ -32,13 +32,14 @@ function ChatInput({ onSendMessage, isAnchored }) {
           width: "100%",
           padding: isAnchored ? "20px 50px 20px 25px" : "12px 50px 12px 20px",
           borderRadius: isAnchored ? "14px" : "10px", // Increased corner radius when anchored
-          border: isAnchored ? "none" : "1px solid #d1d5db",
+          border: isAnchored ? "1px solid transparent" : "1.4px solid #d1d5db",
           fontSize: isAnchored ? "17px" : "16px",
-          backgroundColor: isAnchored ? "#ffffff" : "transparent",
+          backgroundColor: "#ffffff",
           color: "#111827",
           transition: "all 0.3s ease-in-out",
           outline: "none", // Removes default focus border/outline
-          fontFamily: "SF Pro, sans-serif" // Applied SF Pro font
+          fontFamily: "SF Pro, sans-serif", // Applied SF Pro font
+          transition: "all 0.3s ease-in-out, border 0.3s ease-in-out, padding 0.3s ease-in-out"
         }}
       />
       <button

@@ -98,9 +98,10 @@ function Chatbot() {
   };
 
   const handleInputClick = () => {
-    if (!isAnchored) setIsAnchored(true);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top smoothly
+    setTimeout(() => setIsAnchored(true), 300); // Delay anchoring slightly to allow scrolling
   };
-
+  
   // Only adjust vertical translation when anchored.
   const getTransform = () => {
     if (!isAnchored || !initialPosition) return "none";
