@@ -105,7 +105,8 @@ const TimelineItem = ({
               left: "0",
               textAlign: "left",
               whiteSpace: "nowrap",
-              marginLeft: "20px"
+              marginLeft: "20px",
+              fontFamily: "SF Pro"
             }}
           >
             {date}
@@ -130,8 +131,25 @@ const TimelineItem = ({
           marginLeft: "-50px",
           marginTop: "-75px"
         }}>
-          <h3 style={{ fontSize: "28px", color: background === "#FFFFFF" ? "black" : "white", fontWeight: "bold", marginBottom: "-25px", marginTop: "48px", fontFamily: "SF Pro" }}>{title}</h3>
-          <p style={{ fontSize: "20px", color: "gray", marginBottom: "24px" }}>{subtitle}</p>
+          <h3 style={{ 
+            fontSize: "28px", 
+            color: background === "#FFFFFF" ? "black" : "white", 
+            marginBottom: "-25px", 
+            marginTop: "48px", 
+            fontFamily: "SF Pro" ,
+            fontWeight: 800
+          }}>
+            {title}
+          </h3>
+          <p style={{ 
+            fontSize: "20px", 
+            color: "gray", 
+            marginBottom: "24px", 
+            fontFamily: "SF Pro",
+            fontWeight: 650
+          }}>
+            {subtitle}
+          </p>
           
           {image && (
             <div
@@ -171,10 +189,13 @@ const TimelineItem = ({
               marginTop: !image ? "-10px" : "15px",
               display: "flex",
               flexDirection: "column",
-              gap: "10px"
+              gap: "10px",
+              fontFamily: "SF Pro",
+              fontWeight: 500,
+              fontSize: "18px"
             }}
           >
-            <p style={{ margin: 0 }}>{description}</p>
+            <p style={{ margin: 0, fontFamily: "SF Pro" }}>{description}</p>
             
             {techStack && techStack.length > 0 && (
               <div
@@ -213,7 +234,8 @@ const TimelineItem = ({
                   paddingBottom: "2px",
                   width: "fit-content",
                   transition: "opacity 0.2s ease",
-                  opacity: 0.8
+                  opacity: 0.8,
+                  fontFamily: "SF Pro"
                 }}
                 onMouseOver={(e) => e.target.style.opacity = "1"}
                 onMouseOut={(e) => e.target.style.opacity = "0.8"}
