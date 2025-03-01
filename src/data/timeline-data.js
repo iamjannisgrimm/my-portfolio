@@ -188,7 +188,8 @@ const timelineData = [
     subtitle: "iOS Passion Project",
     icon: "/mylife/mylifeicon.png",
     image: "/mylife/mylifelineup.png",
-    description: "My life at a glance. Keeping track of all the important milestones.",
+    description: "Built 'My Life at a Glance' to help users track milestones and achievements.",
+    secondDescription: "10,000+ downloads and a 4.8+ rating, driving user satisfaction and engagement.",
     background: "#FFFFFF",
     techStack: [
       "/techstack/swiftui.png",
@@ -206,7 +207,7 @@ const timelineData = [
     subtitle: "iOS Passion Project",
     icon: "/flightlogbook/flightlogbookicon.png",
     image: "/flightlogbook/flightlogbooklineup.png",
-    description: "Digitilizing my paper LogBook.",
+    description: "Built 'Flight Log Book' for aviation enthusiasts to document flight experiences.",
     background: "#FFFFFF",
     techStack: [
       "/techstack/swiftui.png",
