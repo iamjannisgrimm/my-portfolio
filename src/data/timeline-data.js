@@ -4,7 +4,8 @@ const timelineData = [
     title: "SeeMe",
     subtitle: "Lead Engineer",
     location: "Tech Company Inc., San Francisco",
-    description: "Your digital fully private life coach that truly understands you.",
+    description: "Your digital, fully-private life coach who truly understands you.",
+    secondDescription: "Scaled venture to $2.5M valuation, attracting interest from Silicon Valley investors.",
     icon: "/seeme25/Icon.png",
     image: "seeme25/seemelineup.png",
     background: "#2A2A2A",
@@ -23,8 +24,8 @@ const timelineData = [
   {
     date: "2024 - Present",
     title: "Synechron Inc",
-    subtitle: "Jr. iOS Developer | Jr. Project Manager",
-    description: "Incredible hands on AI Engineering consulting experience.",
+    subtitle: "Jr. Developer | Jr. Project Manager | Jr. Business Analyst",
+    description: "Hands-on AI Engineering consultant building intelligent systems that drive real-world impact.",
     icon: "/synechron/synechron.png",
     background: "#2A2A2A",
     techStack: [
@@ -46,7 +47,8 @@ const timelineData = [
     title: "AI Cover Letter Generator",
     subtitle: "Side Project",
     icon: "/coverletter/terminal.png",
-    description: "Ability to generate cover letter in seconds, maximizing application efficiency.",
+    description: "Ability to generate cover letters in seconds, maximizing application efficiency.",
+    secondDescription: "10 seconds vs. 10 minutes manually—saving hours per job search.",
     image: "/coverletter/coverlettergen.png",
     background: "#2A2A2A",
     techStack: [
@@ -65,7 +67,8 @@ const timelineData = [
     title: "Lufthansa",
     subtitle: "Software Engineer Intern",
     icon: "/lufthansa/lhicon.png",
-    description: "Microservice inception directly leading to win of two new clients.",
+    description: "Built a GoLang and Angular based microservice with Docker/Kubernetes for efficient database management.",
+    secondDescription: "Attracted two new clients, boosting revenue and market competitiveness.",
     background: "#FFFFFF",
     techStack: [
       "/techstack/angular.png",

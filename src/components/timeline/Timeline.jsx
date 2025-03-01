@@ -118,6 +118,7 @@ const Timeline = () => {
               title={item.title}
               subtitle={item.subtitle}
               description={item.description}
+              secondDescription={item.secondDescription}
               icon={item.icon}
               image={item.image}
               techStack={item.techStack}

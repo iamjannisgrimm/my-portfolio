@@ -5,6 +5,7 @@ const TimelineItem = ({
   title, 
   subtitle, 
   description, 
+  secondDescription, // New second description field
   icon, 
   image, 
   techStack, 
@@ -136,14 +137,14 @@ const TimelineItem = ({
             color: background === "#FFFFFF" ? "black" : "white", 
             marginBottom: "-25px", 
             marginTop: "48px", 
-            fontFamily: "SF Pro" ,
+            fontFamily: "SF Pro",
             fontWeight: 800
           }}>
             {title}
           </h3>
           <p style={{ 
             fontSize: "20px", 
-            color: "gray", 
+            color: background === "#FFFFFF" ? "black" : "white", 
             marginBottom: "24px", 
             fontFamily: "SF Pro",
             fontWeight: 650
@@ -180,7 +181,7 @@ const TimelineItem = ({
           
           <div
             style={{
-              color: "gray",
+              color: background === "#FFFFFF" ? "black" : "white", 
               textAlign: "left",
               maxWidth: "clamp(300px, 95%, 100% - 50px)",
               padding: "10px 0",
@@ -196,6 +197,25 @@ const TimelineItem = ({
             }}
           >
             <p style={{ margin: 0, fontFamily: "SF Pro" }}>{description}</p>
+
+            {/* New Second Description */}
+            {secondDescription && (
+              <p style={{ 
+                margin: "10px 0 0 0", 
+                fontFamily: "SF Pro",
+                fontSize: "16px",
+                color: background === "#FFFFFF" ? "black" : "white", 
+                opacity: 0.9,
+                lineHeight: "1.5",
+                fontFamily: "SF Pro",
+                fontWeight: 500,
+                fontSize: "18px",
+                marginTop: "-10px"
+  
+              }}>
+                {secondDescription}
+              </p>
+            )}
             
             {techStack && techStack.length > 0 && (
               <div
