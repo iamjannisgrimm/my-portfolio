@@ -7,19 +7,25 @@ const Timeline = () => {
   const [isReversed, setIsReversed] = useState(false);
   const [animatedData, setAnimatedData] = useState(timelineData);
 
-  // Toggle sorting order with animation
+  // Toggle sorting order with smooth transition
   const handleSortToggle = () => {
     setIsReversed((prev) => !prev);
 
-    // Add fade-out effect before sorting
-    setAnimatedData((prevData) => prevData.map((item) => ({ ...item, fadeOut: true })));
+    // Add a fade-out effect before reordering
+    setAnimatedData((prevData) =>
+      prevData.map((item) => ({ ...item, isFadingOut: true }))
+    );
 
     setTimeout(() => {
       setAnimatedData((prevData) => {
         const reversedData = [...prevData].reverse();
-        return reversedData.map((item) => ({ ...item, fadeOut: false, fadeIn: true }));
+        return reversedData.map((item) => ({
+          ...item,
+          isFadingOut: false,
+          isFadingIn: true,
+        }));
       });
-    }, 300);
+    }, 250); // 250ms to sync with animation timing
   };
 
   // Dynamic styling based on sorting order
@@ -53,64 +59,75 @@ const Timeline = () => {
             alignItems: "center",
             justifyContent: "center", // Title stays centered
             padding: "35px 30px",
-            position: "relative", // Keeps title centered
+            position: "relative", // Ensures stable positioning
           }}
         >
           {/* Title - Stays Centered */}
-          <p style={{ 
-            fontSize: "18px",  
-            fontWeight: "600",
-            color: textColor, 
-            fontFamily: "SF Pro",
-            margin: "0",
-            textAlign: "center",
-            flex: 1,
-          }}>
+          <p
+            style={{
+              fontSize: "18px",
+              fontWeight: "600",
+              color: textColor,
+              fontFamily: "SF Pro",
+              margin: "0",
+              textAlign: "center",
+              flex: 1,
+            }}
+          >
             Take a look at the projects and experiences that have inspired me over the years...
           </p>
-        </div>
 
-        {/* Sort Button - Absolutely Positioned to the Right of the Screen */}
-        <button
-          onClick={handleSortToggle}
-          style={{
-            padding: "0",
-            backgroundColor: "transparent",
-            color: textColor,
-            cursor: "pointer",
-            transition: "transform 0.3s ease, opacity 0.3s ease",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "absolute",
-            right: "50px", // 50px from the right edge of the screen
-            top: "50%", // Vertically align with the title
-            transform: isReversed ? "rotate(180deg) translateY(-50%)" : "translateY(-50%)", // Keeps rotation & alignment smooth
-            border: "none", // No borders
-            outline: "none", // No focus outline
-          }}
-          onMouseOver={(e) => (e.target.style.opacity = "0.7")}
-          onMouseOut={(e) => (e.target.style.opacity = "1")}
-        >
-          <ArrowsUpDownIcon style={{ width: "24px", height: "24px" }} />
-        </button>
+          {/* Sort Button - Absolutely Positioned to the Right of the Screen */}
+          <button
+            onClick={handleSortToggle}
+            style={{
+              padding: "0",
+              backgroundColor: "transparent",
+              color: textColor,
+              cursor: "pointer",
+              transition: "transform 0.3s ease, opacity 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "absolute",
+              right: "50px", // Fixed position 50px from the right edge
+              top: "50%", // Keeps it aligned with title
+              transform: "translateY(-50%)", // Prevents shifting
+              border: "none", // No borders
+              outline: "none", // No focus outline
+            }}
+            onMouseOver={(e) => (e.target.style.opacity = "0.7")}
+            onMouseOut={(e) => (e.target.style.opacity = "1")}
+          >
+            <ArrowsUpDownIcon
+              style={{
+                width: "24px",
+                height: "24px",
+                transition: "transform 0.3s ease",
+                transform: isReversed ? "rotate(180deg)" : "rotate(0deg)", // Smooth rotation
+              }}
+            />
+          </button>
+        </div>
       </div>
 
-      {/* Timeline Items with Animation */}
-      <div style={{ 
-        width: "100%", 
-        display: "flex", 
-        flexDirection: "column", 
-        alignItems: "center",
-        transition: "all 0.5s ease-in-out" 
-      }}>
+      {/* Timeline Items with Smooth Animation */}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+        }}
+      >
         {animatedData.map((item, index) => (
           <div
             key={index}
             style={{
-              opacity: item.fadeOut ? 0 : 1,
-              transform: item.fadeIn ? "scale(1.05)" : "scale(1)",
-              transition: "opacity 0.3s ease, transform 0.3s ease"
+              opacity: item.isFadingOut ? 0 : 1,
+              transform: item.isFadingIn ? "scale(1.02)" : "scale(1)",
+              transition: "opacity 0.3s ease, transform 0.3s ease",
             }}
           >
             <TimelineItem

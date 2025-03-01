@@ -172,7 +172,7 @@ const timelineData = [
     title: "Arizona State University",
     subtitle: "B.S. Computer Science",
     icon: "/asu/asuiconrm.png",
-    description: "Focused on Software Engineering and innovation at ASU, consistently ranked #1 university in innovation.",
+    description: "Focused on Software Engineering, Design, and Innovation at ASU, consistently ranked #1 university in innovation.",
     background: "#2A2A2A",
     techStack: [
     ],
