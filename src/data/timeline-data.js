@@ -90,7 +90,8 @@ const timelineData = [
     title: "SeeMe LLC",
     subtitle: "Founder & CEO",
     icon: "/seeme2023/seemeoldicon.png",
-    description: "Ability to generate cover letter in seconds, maximizing application efficiency.",
+    description: "Led a team to build digital life coach with OpenAI API for AI-driven feedback and tracking.",
+    secondDescription: "Monitored 50+ test users closely, driving iterative improvements for next development phase.",
     image: "/seeme2023/seeme2023lineup.png",
     background: "#FFFFFF",
     techStack: [
@@ -112,7 +113,8 @@ const timelineData = [
     title: "Lufthansa",
     subtitle: "Software Engineer Intern",
     icon: "/lufthansa/lhicon.png",
-    description: "Digital Flight LogBook, integral role in communicating functionality in app.",
+    description: "Enhanced UI/UX for a digital flight logbook used by pilots and maintenance crews.",
+    secondDescription: "Reduced maintenance-related calls by 40% and increased user satisfaction by 25%.",
     background: "#FFFFFF",
     techStack: [
       "/techstack/angular.png",
@@ -131,7 +133,7 @@ const timelineData = [
     subtitle: "Passion Project",
     icon: "/seeme2022/seeme22icon.png",
     image: "/seeme2022/seeme22lineup.png",
-    description: "Journaling reinvented. First iteration of a product I needed.",
+    description: "Developed the first iteration of a journaling app, reinventing personal reflection with a product I wanted for myself.",
     background: "#2A2A2A",
     techStack: [
       "/techstack/swiftui.png",
@@ -149,7 +151,7 @@ const timelineData = [
     subtitle: "Lead iOS Engineer",
     icon: "/introhm/introhmicon.png",
     image: "/introhm/introhmlineup.png",
-    description: "Directly helped this startup get next round of funding through delivery of Beta.",
+    description: "Led development of a fitness app using Swift and Objective-C, integrating ML models for deep athlete performance analytics.",
     background: "#2A2A2A",
     techStack: [
       "/techstack/swiftui.png",
@@ -170,7 +172,7 @@ const timelineData = [
     title: "Arizona State University",
     subtitle: "B.S. Computer Science",
     icon: "/asu/asuiconrm.png",
-    description: "Focusing on Software Engineering and Innovation.",
+    description: "Focused on Software Engineering and innovation at ASU, consistently ranked #1 university in innovation.",
     background: "#2A2A2A",
     techStack: [
     ],
