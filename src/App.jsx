@@ -1,5 +1,6 @@
 import React from 'react';
 import { Home } from './pages/Home';
+import './App.css'; // ✅ Ensure this is imported
 
 console.log("OpenAI API Key:", import.meta.env.VITE_OPENAI_API_KEY); // For Vite
 

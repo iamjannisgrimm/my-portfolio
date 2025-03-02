@@ -1,3 +1,5 @@
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -61,14 +63,6 @@
 /* SF Pro Regular */
 @font-face {
   font-family: 'SF Pro';
-  src: url('/fonts/SF-Pro-Text-Regular.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Text-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SF Pro';
   src: url('/fonts/SF-Pro-Text-Medium.woff2') format('woff2'),
        url('/fonts/SF-Pro-Text-Medium.woff') format('woff');
   font-weight: 500;
@@ -93,25 +87,31 @@
 
 @font-face {
   font-family: 'SF Pro';
-  src: url('../public/fonts/SF-Pro-Text-Heavy.woff2') format('woff2'),
-       url('../public/fonts/SF-Pro-Text-Heavy.woff') format('woff');
+  src: url('./assets/fonts/SF-Pro-Text-Regular.woff2') format('woff2'),
+       url('./assets/fonts/SF-Pro-Text-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./assets/fonts/SF-Pro-Text-Heavy.woff2') format('woff2'),
+       url('./assets/fonts/SF-Pro-Text-Heavy.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF Pro';
-  src: url('../public/fonts/SF-Pro-Text-Black.woff2') format('woff2'),
-       url('../public/fonts/SF-Pro-Text-Black.woff') format('woff');
+  src: url('./assets/fonts/SF-Pro-Text-Black.woff2') format('woff2'),
+       url('./assets/fonts/SF-Pro-Text-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 }
 
-/* Force SF Pro globally */
+/* ✅ Global Default Font */
 * {
   font-family: 'SF Pro', sans-serif !important;
 }
-
 body {
   background-color: white !important; /* ✅ Forces white background for entire app */
   margin: 0; /* ✅ Removes default margin */

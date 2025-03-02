@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/my-portfolio/"
-})
+  base: "/my-portfolio/",
+  assetsInclude: ['src/assets/fonts/*.woff2', 'src/assets/fonts/*.woff']
+});
