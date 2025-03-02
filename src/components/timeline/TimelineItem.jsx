@@ -107,7 +107,7 @@ const TimelineItem = ({
               textAlign: "left",
               whiteSpace: "nowrap",
               marginLeft: "20px",
-              fontFamily: "SF Pro Light"
+              fontFamily: "SF Pro"
             }}
           >
             {date}
@@ -137,7 +137,7 @@ const TimelineItem = ({
             color: background === "#FFFFFF" ? "black" : "white", 
             marginBottom: "-25px", 
             marginTop: "48px", 
-            fontFamily: "SF Pro Black",
+            fontFamily: "SF Pro Regular",
             fontWeight: 800
           }}>
             {title}
@@ -192,7 +192,6 @@ const TimelineItem = ({
               flexDirection: "column",
               gap: "10px",
               fontFamily: "SF Pro Medium",
-              fontWeight: 500,
               fontSize: "18px"
             }}
           >

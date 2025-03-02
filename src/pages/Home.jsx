@@ -14,7 +14,7 @@ export function Home() {
       <div className="blurrable-content" style={{ position: "relative" }}>
         {/* Profile Header */}
         <div style={{ width: "100%", height: "700px", position: "relative" }}>
-          <ProfileHeader image="me/me.png" title="Engineer. Innovator. Leader." />
+          <ProfileHeader image="me/me.png" title="Engineer. Innovator. Leader" />
         </div>
 
         {/* Contributions Section */}
