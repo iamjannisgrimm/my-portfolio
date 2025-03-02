@@ -196,7 +196,7 @@ const TimelineItem = ({
               fontSize: "18px"
             }}
           >
-            <p style={{ margin: 0, fontFamily: "SF Pro" }}>{description}</p>
+            <p style={{ margin: 0, fontFamily: "SF Pro Medium" }}>{description}</p>
 
             {/* New Second Description */}
             {secondDescription && (
@@ -255,7 +255,7 @@ const TimelineItem = ({
                   width: "fit-content",
                   transition: "opacity 0.2s ease",
                   opacity: 0.8,
-                  fontFamily: "SF Pro Medium"
+                  fontFamily: "SF Pro"
                 }}
                 onMouseOver={(e) => e.target.style.opacity = "1"}
                 onMouseOut={(e) => e.target.style.opacity = "0.8"}
