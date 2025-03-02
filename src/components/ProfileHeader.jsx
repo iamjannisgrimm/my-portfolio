@@ -20,17 +20,17 @@ const ProfileHeader = ({ image, title }) => {
           marginBottom: "20px",
           color: "black",
           fontSize: "48px",
-          fontWeight: 800,
+          fontWeight: 800, // ✅ Now correctly mapped to SF Pro Black
           textAlign: "center",
           whiteSpace: "nowrap",
-          fontFamily: "'SF Pro Heavy', sans-serif" // ✅ Explicit SF Pro Heavy
+          fontFamily: "'SF Pro', sans-serif"
         }}
       >
         {title}
       </h1>
 
       <img
-        src={image}
+        src={`${import.meta.env.BASE_URL}me/me.png`} // ✅ Ensure proper path resolution in Vite
         alt="Profile"
         style={{
           maxWidth: "400px",
