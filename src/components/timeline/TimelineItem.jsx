@@ -107,7 +107,7 @@ const TimelineItem = ({
               textAlign: "left",
               whiteSpace: "nowrap",
               marginLeft: "20px",
-              fontFamily: "SF Pro"
+              fontFamily: "SF Pro Light"
             }}
           >
             {date}
@@ -137,7 +137,7 @@ const TimelineItem = ({
             color: background === "#FFFFFF" ? "black" : "white", 
             marginBottom: "-25px", 
             marginTop: "48px", 
-            fontFamily: "SF Pro",
+            fontFamily: "SF Pro Black",
             fontWeight: 800
           }}>
             {title}
@@ -146,7 +146,7 @@ const TimelineItem = ({
             fontSize: "20px", 
             color: background === "#FFFFFF" ? "black" : "white", 
             marginBottom: "24px", 
-            fontFamily: "SF Pro",
+            fontFamily: "SF Pro Heavy",
             fontWeight: 650
           }}>
             {subtitle}
@@ -191,7 +191,7 @@ const TimelineItem = ({
               display: "flex",
               flexDirection: "column",
               gap: "10px",
-              fontFamily: "SF Pro",
+              fontFamily: "SF Pro Medium",
               fontWeight: 500,
               fontSize: "18px"
             }}
@@ -207,7 +207,7 @@ const TimelineItem = ({
                 color: background === "#FFFFFF" ? "black" : "white", 
                 opacity: 0.9,
                 lineHeight: "1.5",
-                fontFamily: "SF Pro",
+                fontFamily: "SF Pro Medium",
                 fontWeight: 500,
                 fontSize: "18px",
                 marginTop: "-10px"
@@ -255,7 +255,7 @@ const TimelineItem = ({
                   width: "fit-content",
                   transition: "opacity 0.2s ease",
                   opacity: 0.8,
-                  fontFamily: "SF Pro"
+                  fontFamily: "SF Pro Medium"
                 }}
                 onMouseOver={(e) => e.target.style.opacity = "1"}
                 onMouseOut={(e) => e.target.style.opacity = "0.8"}

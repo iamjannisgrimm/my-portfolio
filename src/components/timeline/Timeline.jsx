@@ -68,7 +68,7 @@ const Timeline = () => {
               fontSize: "18px",
               fontWeight: "600",
               color: textColor,
-              fontFamily: "SF Pro",
+              fontFamily: "SF Pro Bold",
               margin: "0",
               textAlign: "center",
               flex: 1,
