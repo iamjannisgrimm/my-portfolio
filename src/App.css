@@ -85,24 +85,24 @@
 
 @font-face {
   font-family: 'SF Pro';
-  src: url('../fonts/SF-Pro-Text-Bold.woff2') format('woff2'),
-       url('../fonts/SF-Pro-Text-Bold.woff') format('woff');
+  src: url('../public/fonts/SF-Pro-Text-Bold.woff2') format('woff2'),
+       url('../public/fonts/SF-Pro-Text-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF Pro';
-  src: url('../fonts/SF-Pro-Text-Heavy.woff2') format('woff2'),
-       url('../fonts/SF-Pro-Text-Heavy.woff') format('woff');
+  src: url('../public/fonts/SF-Pro-Text-Heavy.woff2') format('woff2'),
+       url('../public/fonts/SF-Pro-Text-Heavy.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF Pro';
-  src: url('../fonts/SF-Pro-Text-Black.woff2') format('woff2'),
-       url('../fonts/SF-Pro-Text-Black.woff') format('woff');
+  src: url('../public/fonts/SF-Pro-Text-Black.woff2') format('woff2'),
+       url('../public/fonts/SF-Pro-Text-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 }
