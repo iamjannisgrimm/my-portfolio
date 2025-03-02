@@ -8,7 +8,7 @@ const ProfileHeader = ({ image, title }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "700px",  // ✅ FIXED HEIGHT (removes dynamic stretching)
+        height: "700px",  
         width: "100vw",
         position: "relative",
         paddingBottom: "50px", 
@@ -23,8 +23,7 @@ const ProfileHeader = ({ image, title }) => {
           fontWeight: 800,
           textAlign: "center",
           whiteSpace: "nowrap",
-          fontFamily: "SF Pro"
-
+          fontFamily: "'SF Pro Heavy', sans-serif" // ✅ Explicit SF Pro Heavy
         }}
       >
         {title}
