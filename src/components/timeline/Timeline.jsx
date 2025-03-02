@@ -74,7 +74,7 @@ const Timeline = () => {
               flex: 1,
             }}
           >
-            Take a look at the projects and experiences that have inspired me over the years...
+            The projects and experiences that have inspired me over the years...
           </p>
 
           {/* Sort Button - Absolutely Positioned to the Right of the Screen */}
