@@ -23,7 +23,7 @@ const ProfileHeader = ({ image, title }) => {
           fontWeight: 800,
           textAlign: "center",
           whiteSpace: "nowrap",
-          fontFamily: "'SF Pro', sans-serif" // ✅ Explicit SF Pro Heavy
+          fontFamily: "'SF Pro Heavy', sans-serif" // ✅ Explicit SF Pro Heavy
         }}
       >
         {title}
