@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { TimelineDetail } from './TimelineDetail';
+import { timelineDetailData } from '../../data/timeline-detail-data';
 
 const TimelineItem = ({ 
   date, 
   title, 
   subtitle, 
   description, 
-  secondDescription, // New second description field
+  secondDescription, 
   icon, 
   image, 
   techStack, 
@@ -16,6 +18,7 @@ const TimelineItem = ({
   linkColor
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -31,11 +34,9 @@ const TimelineItem = ({
         threshold: 0.15
       }
     );
-
     if (elementRef.current) {
       observer.observe(elementRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
 
@@ -43,15 +44,14 @@ const TimelineItem = ({
   const bottomPadding = 70 + (Number(bottomSpacing) || 0);
 
   return (
-    // Static background and timeline line container
     <div
       style={{
         position: "relative",
         backgroundColor: background || "white",
         width: "100vw",
         maxWidth: "100vw",
-        paddingTop: topPadding + 'px',
-        paddingBottom: bottomPadding + 'px',
+        paddingTop: `${topPadding}px`,
+        paddingBottom: `${bottomPadding}px`,
       }}
     >
       {/* Static timeline line */}
@@ -66,7 +66,6 @@ const TimelineItem = ({
           zIndex: 0,
         }}
       />
-
       {/* Animated content container */}
       <div
         ref={elementRef}
@@ -116,11 +115,15 @@ const TimelineItem = ({
             <img
               src={icon}
               alt="icon"
-              style={{ width: "60px", height: "60px", objectFit: "contain", marginTop: "10px" }}
+              style={{
+                width: "60px",
+                height: "60px",
+                objectFit: "contain",
+                marginTop: "10px"
+              }}
             />
           )}
         </div>
-
         {/* Right column with content */}
         <div style={{
           flex: 1,
@@ -166,7 +169,6 @@ const TimelineItem = ({
                 src={image}
                 alt="event"
                 style={{
-                  width: "100%",
                   maxWidth: "min(650px, 70vw)",
                   minWidth: "400px",
                   height: "auto",
@@ -191,31 +193,25 @@ const TimelineItem = ({
               display: "flex",
               flexDirection: "column",
               gap: "10px",
-              fontFamily: "SF Pro Medium",
-              fontSize: "18px"
+              fontFamily: "SF Pro Bold",
+              fontSize: "18px",
+              fontWeight: 600
             }}
           >
-            <p style={{ margin: 0, fontFamily: "SF Pro Medium" }}>{description}</p>
-
-            {/* New Second Description */}
+            <p style={{ margin: 0, fontFamily: "SF Pro Bold" }}>{description}</p>
             {secondDescription && (
               <p style={{ 
                 margin: "10px 0 0 0", 
-                fontFamily: "SF Pro",
-                fontSize: "16px",
+                fontFamily: "SF Pro Bold",
+                fontSize: "18px",
                 color: background === "#FFFFFF" ? "black" : "white", 
                 opacity: 0.9,
                 lineHeight: "1.5",
-                fontFamily: "SF Pro Medium",
-                fontWeight: 500,
-                fontSize: "18px",
                 marginTop: "-10px"
-  
               }}>
                 {secondDescription}
               </p>
             )}
-            
             {techStack && techStack.length > 0 && (
               <div
                 style={{
@@ -241,8 +237,8 @@ const TimelineItem = ({
                 ))}
               </div>
             )}
-            
-            {link && (
+            {/* For non-"SeeMe" items, render the normal Learn more link if provided */}
+            {title !== "SeeMe" && link && (
               <a
                 href={link}
                 target="_blank"
@@ -263,6 +259,68 @@ const TimelineItem = ({
               </a>
             )}
           </div>
+          
+          {/* Expand/Collapse section for TimelineDetail when title is "SeeMe" */}
+          {title === "SeeMe" && (
+  <div style={{ 
+    marginTop: "20px", 
+    width: "100%", 
+    display: "flex", 
+    flexDirection: "column", 
+    alignItems: "flex-start",
+    marginLeft: "-80px" // keeping the container's left offset
+  }}>
+    <button
+      onClick={() => setExpanded(!expanded)}
+      style={{
+        alignSelf: "flex-start",
+        padding: "8px 16px",
+        fontSize: "16px",
+        backgroundColor: linkColor || "#007BFF",
+        color: "white",
+        border: "none",
+        borderRadius: "4px",
+        cursor: "pointer",
+        fontFamily: "SF Pro"
+      }}
+    >
+      {expanded ? "Collapse" : "Learn More"}
+    </button>
+    <div
+      style={{
+        overflow: "hidden",
+        transition: "max-height 0.5s ease, opacity 0.5s ease",
+        maxHeight: expanded ? "10000px" : "0px", // when collapsed, takes up no space
+        opacity: expanded ? 1 : 0,
+        width: "100%",
+        marginTop: "10px"
+      }}
+    >
+      <TimelineDetail data={timelineDetailData} />
+      {expanded && link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: linkColor,
+            textDecoration: "none",
+            paddingBottom: "2px",
+            width: "fit-content",
+            transition: "opacity 0.2s ease",
+            opacity: 0.8,
+            fontFamily: "SF Pro",
+            // No extra marginLeft here – it now uses the same alignment as the non-SeeMe link
+          }}
+          onMouseOver={(e) => e.target.style.opacity = "1"}
+          onMouseOut={(e) => e.target.style.opacity = "0.8"}
+        >
+          Learn more
+        </a>
+      )}
+    </div>
+  </div>
+)}         
         </div>
       </div>
     </div>

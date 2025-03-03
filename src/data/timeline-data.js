@@ -24,7 +24,7 @@ const timelineData = [
   {
     date: "2024 - Present",
     title: "Synechron Inc",
-    subtitle: "Jr. Developer | Jr. Project Manager | Jr. Business Analyst",
+    subtitle: "Software Engineer",
     description: "Hands-on AI Engineering consultant building intelligent systems that drive real-world impact.",
     icon: "synechron/synechron.png",
     background: "#2A2A2A",
