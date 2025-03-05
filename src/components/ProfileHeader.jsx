@@ -2,45 +2,58 @@ import React from "react";
 
 const ProfileHeader = ({ image, title }) => {
   return (
-    <div 
-      style={{ 
+    <div
+      style={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "700px",  
-        width: "100vw",
-        position: "relative",
-        paddingBottom: "50px", 
-        boxSizing: "border-box",
+        width: "100%",
+        padding: "80px 0", // Remove horizontal padding
+        margin: 0,
+        textAlign: "center"
       }}
     >
       <h1
         style={{
-          marginBottom: "20px",
+          marginBottom: "30px",
           color: "black",
-          fontSize: "48px",
-          fontWeight: 800, // ✅ Now correctly mapped to SF Pro Black
+          fontSize: "clamp(32px, 5vw, 48px)",
+          fontWeight: 800,
           textAlign: "center",
-          whiteSpace: "nowrap",
-          fontFamily: "SF Pro"
+          whiteSpace: "normal",
+          fontFamily: "SF Pro",
+          letterSpacing: "-1px",
+          padding: 0,
+          margin: "0 0 30px 0", // Only bottom margin
+          width: "100%",
+          maxWidth: "800px"
         }}
       >
         {title}
       </h1>
-
-      <img
-        src={`${import.meta.env.BASE_URL}me/me.png`} // ✅ Ensure proper path resolution in Vite
-        alt="Profile"
-        style={{
-          maxWidth: "400px",
-          width: "100%",
-          height: "auto",
-          borderRadius: "12px",
-          objectFit: "cover",
-          display: "block",
-        }}
-      />
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        margin: 0,
+        padding: 0
+      }}>
+        <img
+          src={`${import.meta.env.BASE_URL}${image}`}
+          alt="Profile"
+          style={{
+            maxWidth: "400px",
+            width: "90%",
+            height: "auto",
+            borderRadius: "12px",
+            objectFit: "cover",
+            display: "block",
+            margin: 0
+          }}
+        />
+      </div>
     </div>
   );
 };

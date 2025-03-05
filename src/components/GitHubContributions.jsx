@@ -2,33 +2,42 @@ import React, { useState, useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
 
 const GitHubContributions = ({ username }) => {
-  const [containerWidth, setContainerWidth] = useState(Math.min(window.innerWidth * 0.9, 800));
-
+  const [containerWidth, setContainerWidth] = useState(0);
+  
   useEffect(() => {
-    const handleResize = () => {
-      setContainerWidth(Math.min(window.innerWidth * 0.9, 800));
+    const calculateWidth = () => {
+      const viewportWidth = window.innerWidth;
+      const maxWidth = Math.min(viewportWidth * 0.9, 800);
+      setContainerWidth(maxWidth);
     };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    
+    // Initial calculation
+    calculateWidth();
+    
+    // Update on resize
+    window.addEventListener("resize", calculateWidth);
+    return () => window.removeEventListener("resize", calculateWidth);
   }, []);
-
+  
+  // Calculate responsive values
+  const blockSize = Math.max(containerWidth / 90, 7);
+  const blockMargin = Math.max(containerWidth / 250, 2);
+  const fontSize = Math.max(containerWidth / 140, 8);
+  
   return (
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         flexDirection: "column",
-        textAlign: "center",
-        width: "100vw",
-        marginTop: "-31px",
-        boxSizing: "border-box",
-        backgroundColor: "white",
-        padding: "30px 0",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        margin: 0,
+        padding: 0,
+        marginTop: "-31px"
       }}
     >
-      {/* Injecting CSS directly into the component */}
+      {/* Style customizations */}
       <style>
         {`
           .react-activity-calendar text {
@@ -37,32 +46,40 @@ const GitHubContributions = ({ username }) => {
           }
           .react-activity-calendar {
             color: black !important;
+            max-width: 100%;
+            margin: 0 auto;
           }
-          .react-activity-calendar span {
-            color: black !important;
-          }
-          .react-activity-calendar summary {
-            color: black !important;
-          }
+          .react-activity-calendar span,
+          .react-activity-calendar summary,
           .react-activity-calendar button {
             color: black !important;
           }
+          @media (max-width: 800px) {
+            .react-activity-calendar {
+              overflow-x: auto;
+            }
+          }
         `}
       </style>
+      
+      {/* Calendar container with strict centering */}
       <div
         style={{
-          width: `min(${containerWidth}px, 100%)`,
-          maxWidth: "100%",
-          transition: "width 0.3s ease-in-out",
+          width: "100%",
+          maxWidth: `${containerWidth}px`,
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
+          overflowX: "auto",
+          margin: "0 auto",
+          padding: 0
         }}
       >
         <GitHubCalendar
           username={username}
-          blockSize={Math.max(containerWidth / 90, 7)}
-          blockMargin={Math.max(containerWidth / 250, 2)}
-          fontSize={Math.max(containerWidth / 140, 8)}
+          blockSize={blockSize}
+          blockMargin={blockMargin}
+          fontSize={fontSize}
           colorScheme="light"
         />
       </div>
