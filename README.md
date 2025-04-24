@@ -1,5 +1,5 @@
 # My Personal Brand
-Tell your unique story. 
+Telling my unique story. 
 
 Template to present/brand yourself:
 - component based timeline
