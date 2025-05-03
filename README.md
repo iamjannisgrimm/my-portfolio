@@ -7,3 +7,6 @@ Template to present/brand yourself:
 - blog capabilities
 
 
+
+Deprecated and replaced with 'jannis-grimm'
+
