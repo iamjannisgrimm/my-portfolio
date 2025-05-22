@@ -6,7 +6,5 @@ Template to present/brand yourself:
 - personal GPT
 - blog capabilities
 
-
-
 Deprecated and replaced with my published portfolio: 'jannis-grimm'
 
